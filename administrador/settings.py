@@ -34,7 +34,7 @@ if ENVIRONMENT == 'development':
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -141,13 +141,14 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-MEDIA_URL = '/staticfiles/'
-MEDIA_ROOT = BASE_DIR / 'staticfiles'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -164,7 +165,7 @@ EMAIL_HOST_PASSWORD = 'kikioymvcwcumkwz'  # Tu contraseña de correo electrónic
 
 
 #configuraciones
-ALLOWED_HOSTS = ['localhost','web-production-9589.up.railway.app']
+ALLOWED_HOSTS = ['127.0.0.1','localhost','web-production-9589.up.railway.app']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
