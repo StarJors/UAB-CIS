@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = 'django-insecure-_60__*=d01b$#07iidi^yc6xqju#m%u5^ttur-+li=@=0%6cgs'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if ENVIRONMENT == 'development':
@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'whitenoise.runserver_nostatic',
+    'whitenoise.runserver_nostatic',
     'gestion_usuarios',
     'seg_mod_graduacion',
     'interaccion_social',
@@ -58,7 +58,7 @@ AUTH_USER_MODEL = 'gestion_usuarios.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-   #'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -98,7 +98,7 @@ DATABASES = {
     }
 }
 
-POSTGRES_LOCALLY = False
+POSTGRES_LOCALLY = True
 if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
     DATABASES['default'] = dj_database_url.parse(env('DATABASE_URL'))
 
@@ -164,10 +164,10 @@ EMAIL_HOST_PASSWORD = 'kikioymvcwcumkwz'  # Tu contraseña de correo electrónic
 
 
 #configuraciones
-#ALLOWED_HOSTS = ['localhost','aca pongo el campo servidor']
+ALLOWED_HOSTS = ['localhost','web-production-9589.up.railway.app']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-#STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-#CSRF_TRUSTED_ORIGINS = ['http://*','https://aca la direccionde']
+CSRF_TRUSTED_ORIGINS = ['http://*','https://web-production-9589.up.railway.app']
