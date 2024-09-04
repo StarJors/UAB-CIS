@@ -21,7 +21,5 @@ urlpatterns = [
     path('admrepositorio/pdf/', pdf_reporte_repositorio.as_view(), name='pdf_reporte_repositorio'),
     #path('pasardatos/', views.pasardatos, name='pasardatos'),
     
-]
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 #handler403 = handle_permission_denied
