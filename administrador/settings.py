@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles' , 
+    'cloudinary_storage' , 
+    'cloudinary' , 
     'whitenoise.runserver_nostatic',
     'gestion_usuarios',
     'seg_mod_graduacion',
@@ -155,9 +157,18 @@ STATICFILES_DIRS = [
 #STATICFILES_DIRS = [
  #   BASE_DIR / "static",
 #]
+CLOUDINARY_STORAGE  =  { 
+    'CLOUD_NAME':  env('CLOUD_NAME'),
+    'API_KEY':  env('CLOUD_API_KEY'),
+    'API_SECRET':  env('CLOUD_API_SECRET')
+}
 
-MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+else:
+    MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
