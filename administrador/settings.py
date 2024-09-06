@@ -158,9 +158,9 @@ STATICFILES_DIRS = [
  #   BASE_DIR / "static",
 #]
 CLOUDINARY_STORAGE  =  { 
-    'CLOUD_NAME':  env('CLOUD_NAME'),
-    'API_KEY':  env('CLOUD_API_KEY'),
-    'API_SECRET':  env('CLOUD_API_SECRET')
+    'CLOUD_NAME': 'dz3nnbdrd', #env('CLOUD_NAME'),
+    'API_KEY': '241547556999655', #env('CLOUD_API_KEY'),
+    'API_SECRET':'ZD0jjH65vq620eAJo1LpGVPu_8Q' #env('CLOUD_API_SECRET')
 }
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
