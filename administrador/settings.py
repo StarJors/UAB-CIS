@@ -158,9 +158,9 @@ STATICFILES_DIRS = [
  #   BASE_DIR / "static",
 #]
 CLOUDINARY_STORAGE  =  { 
-    'CLOUD_NAME': 'dz3nnbdrd', #env('CLOUD_NAME'),
-    'API_KEY': '241547556999655', #env('CLOUD_API_KEY'),
-    'API_SECRET':'ZD0jjH65vq620eAJo1LpGVPu_8Q' #env('CLOUD_API_SECRET')
+    'CLOUD_NAME':  env('CLOUD_NAME'),
+    'API_KEY':  env('CLOUD_API_KEY'),
+    'API_SECRET':  env('CLOUD_API_SECRET')
 }
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -186,6 +186,7 @@ EMAIL_HOST_PASSWORD = 'kikioymvcwcumkwz'  # Tu contraseña de correo electrónic
 
 #configuraciones
 ALLOWED_HOSTS = ['127.0.0.1','localhost','web-production-9589.up.railway.app']
+ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
