@@ -159,7 +159,7 @@ if ENVIRONMENT == 'development':
 else:
     DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
     CLOUDINARY_STORAGE  =  { 
-        'CLOUDINARY_URL': env('CLOUDINARY_URL')
+        'CLOUDINARY_URL': 'cloudinary://241547556999655:ZD0jjH65vq620eAJo1LpGVPu_8Q@dz3nnbdrd'
    
     }
 
