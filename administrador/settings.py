@@ -160,9 +160,9 @@ STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 #
 
 CLOUDINARY_STORAGE  =  { 
-    'CLOUD_NAME':  env('CLOUD_NAME'),
-    'API_KEY':  env('CLOUD_API_KEY'),
-    'API_SECRET':  env('CLOUD_API_SECRET')
+    'CLOUD_NAME':  'dz3nnbdrd',
+    'API_KEY':  '241547556999655',
+    'API_SECRET': 'ZD0jjH65vq620eAJo1LpGVPu_8Q'  #env('ZD0jjH65vq620eAJo1LpGVPu_8Q')
 }
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
