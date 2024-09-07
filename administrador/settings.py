@@ -148,29 +148,21 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+STATICFILES_DIRS = [ BASE_DIR / 'static' ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# agregue esto 07/09/2024
-#STATIC_URL = '/static/'
-#STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-#
+MEDIA_URL = 'media/'
 
-CLOUDINARY_STORAGE  =  { 
-    'CLOUD_NAME':  'dz3nnbdrd',
-    'API_KEY':  '241547556999655',
-    'API_SECRET': 'ZD0jjH65vq620eAJo1LpGVPu_8Q'  #env('ZD0jjH65vq620eAJo1LpGVPu_8Q')
-}
-
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
-    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-else:
+if ENVIRONMENT == 'development':
     MEDIA_ROOT = BASE_DIR / 'media'
+else:
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+    CLOUDINARY_STORAGE  =  { 
+        'CLOUDINARY_URL': env('CLOUDINARY_URL')
+   
+    }
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
