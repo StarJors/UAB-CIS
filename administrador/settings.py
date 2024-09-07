@@ -45,8 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary_storage' ,
     'django.contrib.staticfiles' , 
+    'cloudinary_storage' ,
     'cloudinary' , 
     'whitenoise.runserver_nostatic',
     'gestion_usuarios',
@@ -70,8 +70,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-# Debe ir fuera de la lista MIDDLEWARE
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 ROOT_URLCONF = 'administrador.urls'
 
@@ -149,10 +148,11 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # agregue esto 07/09/2024
 #STATIC_URL = '/static/'
@@ -165,7 +165,7 @@ CLOUDINARY_STORAGE  =  {
     'API_SECRET': 'ZD0jjH65vq620eAJo1LpGVPu_8Q'  #env('ZD0jjH65vq620eAJo1LpGVPu_8Q')
 }
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
     DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
@@ -190,8 +190,9 @@ EMAIL_HOST_PASSWORD = 'kikioymvcwcumkwz'  # Tu contraseña de correo electrónic
 ALLOWED_HOSTS = ['127.0.0.1','localhost','web-production-9589.up.railway.app']
 ALLOWED_HOSTS = ['*']
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+# Debe ir fuera de la lista MIDDLEWARE
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CSRF_TRUSTED_ORIGINS = ['http://*','https://web-production-9589.up.railway.app']
