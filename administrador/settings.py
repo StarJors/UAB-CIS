@@ -103,7 +103,7 @@ DATABASES = {
     }
 }
 
-POSTGRES_LOCALLY = True
+POSTGRES_LOCALLY = False
 if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
     DATABASES['default'] = dj_database_url.parse(env('DATABASE_URL'))
 
@@ -181,7 +181,6 @@ EMAIL_HOST_PASSWORD = 'kikioymvcwcumkwz'  # Tu contraseña de correo electrónic
 #configuraciones
 ALLOWED_HOSTS = ['127.0.0.1','localhost','web-production-9589.up.railway.app']
 ALLOWED_HOSTS = ['*']
-
 
 
 # Debe ir fuera de la lista MIDDLEWARE
